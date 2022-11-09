@@ -36,6 +36,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "<C-w>", close_tab)
 
 -- Visual --
 -- Stay in indent mode
@@ -62,4 +63,12 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+
+-- useful functions --
+
+function close_tab()
+  vim.cmd("bd")
+  vim.cmd("bprevious")
+end
 
