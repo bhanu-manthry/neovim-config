@@ -25,8 +25,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -36,7 +34,20 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- close buffer
+function close_tab()
+  vim.cmd("bd")
+  vim.cmd("bprevious")
+end
 vim.keymap.set("n", "<C-w>", close_tab)
+
+-- function run_lua_file()
+--   vim.cmd("write")
+--   vim.cmd("luafile %")
+--   print("running lua file")
+-- end
+keymap("n", "<F4>", ":w | luafile %<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -62,13 +73,5 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
-
--- useful functions --
-
-function close_tab()
-  vim.cmd("bd")
-  vim.cmd("bprevious")
-end
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 

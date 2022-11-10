@@ -50,10 +50,8 @@ nvim_tree.setup {
     },
     view = {
         width = 30,
-        height = 30,
         hide_root_folder = false,
         side = "left",
-        auto_resize = true,
         mappings = {
             custom_only = false,
             list = {
@@ -64,10 +62,6 @@ nvim_tree.setup {
         },
         number = false,
         relativenumber = false,
-    },
-    actions = {
-        quit_on_open = true,
-        window_picker = { enable = true },
     },
     renderer = {
         highlight_git = true,

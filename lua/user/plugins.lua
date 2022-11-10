@@ -83,6 +83,19 @@ return packer.startup(function(use)
   }
 
   use "neovim/nvim-lspconfig"
+  use "nvim-lualine/lualine.nvim"
+  use "numToStr/Comment.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.0"
+  }
+  use "windwp/nvim-autopairs"
+  use {
+    "windwp/nvim-ts-autotag",
+    requires = {
+      "nvim-treesitter/nvim-treesitter"
+    },
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
