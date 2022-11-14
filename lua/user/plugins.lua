@@ -96,9 +96,18 @@ return packer.startup(function(use)
       "nvim-treesitter/nvim-treesitter"
     },
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+  }
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
+  use "hrsh7th/nvim-cmp" -- completion
+  use "hrsh7th/cmp-nvim-lsp" -- nvim-cmp source for neovim's built-in lsp
+  use "hrsh7th/cmp-buffer" -- nvim-cmp source for buffer words
+  use "hrsh7th/cmp-path"
+  use "saadparwaiz1/cmp_luasnip"
+  use "L3MON4D3/LuaSnip"
+  use "hrsh7th/cmp-nvim-lua"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end

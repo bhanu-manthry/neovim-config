@@ -5,11 +5,6 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -35,18 +30,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- close buffer
-function close_tab()
-  vim.cmd("bd")
-  vim.cmd("bprevious")
-end
-vim.keymap.set("n", "<C-w>", close_tab)
-
--- function run_lua_file()
---   vim.cmd("write")
---   vim.cmd("luafile %")
---   print("running lua file")
--- end
 keymap("n", "<F4>", ":w | luafile %<CR>", opts)
 
 -- Visual --
